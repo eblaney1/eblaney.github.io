@@ -1,5 +1,3 @@
-# supernova
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -214,3 +212,4 @@
         <li>Share it with classmates if needed</li>
     </ol>
 </section>
+
