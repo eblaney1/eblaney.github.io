@@ -110,7 +110,7 @@
 
         .topic-img-wrap {
             flex: 0 0 280px;
-            max-width: 100%;
+            fit-content: 100%;
         }
 
         .topic-img-wrap img {
@@ -196,7 +196,7 @@
         }
 
         /* ===== RESPONSIVE — MOBILE ===== */
-        @media (max-width: 700px) {
+        @media (fit-content: 700px) {
 
             /* Nav: stack title above links, links wrap tightly */
             nav {
@@ -277,3 +277,4 @@
         }
     </style>
 </head>
+
