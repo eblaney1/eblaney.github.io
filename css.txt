@@ -1,144 +1,279 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Student Survival Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f5f7fb;
-    color: #333;
-}
+<style>
+        /* ===== GENERAL STYLES ===== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #739ac2;
+            color: #333;
+        }
 
-/* NAVBAR */
-header {
-    background: linear-gradient(90deg, #4f46e5, #16188f);
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+        h1, h2, h3 {
+            color: #011e3b;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-.logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+        /* ===== HEADER & NAV ===== */
+        header {
+            background-color: #517ea8;
+            color: rgb(170, 172, 170);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.nav-links a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #e0e7ff, #f0f9ff);
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-.hero h1 {
-    font-size: 2.5rem;
-}
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background-color: #e3f2fd;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero p {
-    margin: 15px 0;
-    font-size: 1.1rem;
-}
+        .hero-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
 
-.hero button {
-    background: #4f46e5;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-}
+        .hero button {
+            padding: 12px 20px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-.hero button:hover {
-    background: #4338ca;
-}
+        .hero button:hover {
+            background-color: #125aa3;
+        }
 
-/* SECTIONS */
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
-}
+        /* ===== TOPICS ===== */
+        .topic {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-.section h2 {
-    margin-bottom: 20px;
-}
+        .topic ul {
+            margin-left: 20px;
+        }
 
-/* CARDS */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
+        /* ===== TOPIC IMAGE LAYOUT ===== */
+        .topic-content {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
 
-.card {
-    background: white;
-    padding: 25px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    font-size: 1.1rem;
-}
+        .topic-text {
+            flex: 1;
+            min-width: 240px;
+        }
 
-/* TOPIC SECTIONS */
-.card-section {
-    background: white;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
+        .topic-img-wrap {
+            flex: 0 0 280px;
+            max-width: 100%;
+        }
 
-.card-section ul,
-.card-section ol {
-    margin-left: 20px;
-}
+        .topic-img-wrap img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            object-fit: cover;
+            max-height: 200px;
+        }
 
-/* FAQ */
-.faq-item {
-    margin-bottom: 15px;
-}
+        .topic-img-wrap figcaption {
+            font-size: 0.78rem;
+            color: #777;
+            margin-top: 5px;
+            text-align: center;
+        }
 
-.faq-question {
-    width: 100%;
-    background: #eef2ff;
-    border: none;
-    padding: 15px;
-    font-size: 1rem;
-    text-align: left;
-    border-radius: 8px;
-    cursor: pointer;
-}
+        /* ===== OVERVIEW ICON GRID ===== */
+        .overview-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            justify-content: center;
+        }
 
-.faq-answer {
-    display: none;
-    padding: 15px;
-    background: #f9fafb;
-    border-radius: 0 0 8px 8px;
-}
+        .overview-card {
+            background: #f0f6ff;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            flex: 1 1 150px;
+            max-width: 180px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
 
-/* FOOTER */
-footer {
-    background: #1f2933;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
+        .overview-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
 
+        .overview-card p {
+            font-size: 0.88rem;
+            color: #444;
+            margin: 0;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 8px 0;
+        }
+
+        .faq-question::before {
+            content: "▶ ";
+            font-size: 0.75rem;
+            color: #1976d2;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+            padding-left: 16px;
+            border-left: 3px solid #1976d2;
+            color: #555;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #1f2933;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* ===== RESPONSIVE — MOBILE ===== */
+        @media (max-width: 700px) {
+
+            /* Nav: stack title above links, links wrap tightly */
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            nav div {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            nav a {
+                margin: 0;
+                font-size: 0.85rem;
+                padding: 4px 6px;
+                background: rgba(255,255,255,0.15);
+                border-radius: 4px;
+            }
+
+            /* Hero: smaller padding, taller image for portrait screens */
+            .hero {
+                padding: 30px 16px;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .hero-img {
+                max-height: 200px;
+                border-radius: 8px;
+            }
+            .hero button {
+                width: 100%;
+                padding: 14px;
+                font-size: 1rem;
+            }
+
+            /* Sections: tighter padding */
+            section {
+                padding: 24px 14px;
+            }
+
+            /* Topics: always stack vertically, image full-width on top */
+            .topic-content {
+                flex-direction: column;
+            }
+            .topic-img-wrap {
+                flex: 0 0 auto;
+                width: 100%;
+                order: -1; /* image always appears above text on mobile */
+            }
+            .topic-img-wrap img {
+                max-height: 180px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            .topic-text {
+                min-width: unset;
+                width: 100%;
+            }
+
+            /* Overview cards: 2-column grid on mobile */
+            .overview-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .overview-card {
+                max-width: unset;
+                flex: unset;
+            }
+
+            /* FAQ: bigger tap targets */
+            .faq-question {
+                padding: 12px 0;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
