@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech Student Survival Guide</title>
-    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<style>
         /* ===== GENERAL STYLES ===== */
         body {
             font-family: Arial, sans-serif;
@@ -196,14 +196,84 @@
             margin-top: 40px;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 600px) {
+        /* ===== RESPONSIVE — MOBILE ===== */
+        @media (max-width: 700px) {
+
+            /* Nav: stack title above links, links wrap tightly */
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            nav div {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            nav a {
+                margin: 0;
+                font-size: 0.85rem;
+                padding: 4px 6px;
+                background: rgba(255,255,255,0.15);
+                border-radius: 4px;
+            }
+
+            /* Hero: smaller padding, taller image for portrait screens */
+            .hero {
+                padding: 30px 16px;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .hero-img {
+                max-height: 200px;
+                border-radius: 8px;
+            }
+            .hero button {
+                width: 100%;
+                padding: 14px;
+                font-size: 1rem;
+            }
+
+            /* Sections: tighter padding */
+            section {
+                padding: 24px 14px;
+            }
+
+            /* Topics: always stack vertically, image full-width on top */
             .topic-content {
                 flex-direction: column;
             }
             .topic-img-wrap {
                 flex: 0 0 auto;
                 width: 100%;
+                order: -1; /* image always appears above text on mobile */
+            }
+            .topic-img-wrap img {
+                max-height: 180px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            .topic-text {
+                min-width: unset;
+                width: 100%;
+            }
+
+            /* Overview cards: 2-column grid on mobile */
+            .overview-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .overview-card {
+                max-width: unset;
+                flex: unset;
+            }
+
+            /* FAQ: bigger tap targets */
+            .faq-question {
+                padding: 12px 0;
+                font-size: 1rem;
             }
         }
     </style>
@@ -444,6 +514,7 @@
 
 </body>
 </html>
+
 
 
 
