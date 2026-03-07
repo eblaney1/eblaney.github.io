@@ -426,8 +426,8 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-    <p>© 2026 Tech Student Survival Guide</p>
     <p>You've got this 💻 Learning tech takes time.</p>
+    <p>© 2026 Tech Student Survival Guide</p>
 </footer>
 
 <!-- ===== JAVASCRIPT ===== -->
@@ -444,5 +444,6 @@
 
 </body>
 </html>
+
 
 
